@@ -1,2 +1,4 @@
 server/obj
 server/bin
+server/appsettings.Development.json
+server/appsettings.json
