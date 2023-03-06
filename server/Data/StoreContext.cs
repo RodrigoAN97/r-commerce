@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using server.Entities;
 
 namespace server.Data
 {
@@ -8,5 +9,7 @@ namespace server.Data
         {
             
         }
+
+        public DbSet<Product> Products { get; set; }
     }
 }
