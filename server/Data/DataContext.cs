@@ -5,14 +5,9 @@ public class DataContext : DbContext
 {
     protected readonly IConfiguration Configuration;
 
-    public DataContext(IConfiguration configuration)
+    public DataContext(DbContextOptions options): base(options)
     {
-        Configuration = configuration;
-    }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder options)
-    {
-        options.UseNpgsql(Configuration.GetConnectionString("WebApiDatabase"));
     }
 
     public DbSet<Product> Products { get; set; }
