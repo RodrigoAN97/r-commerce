@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using server.Entities;
+using server.Core.Entities;
 
-namespace server.Interfaces
+namespace server.Core.Interfaces
 {
     public interface IProductRepository
     {

@@ -1,4 +1,4 @@
-namespace server.Entities
+namespace server.Core.Entities
 {
     public class Product
     {

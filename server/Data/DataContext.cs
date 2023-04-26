@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using server.Entities;
+using server.Core.Entities;
 
 public class DataContext : DbContext
 {

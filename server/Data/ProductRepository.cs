@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using server.Entities;
-using server.Interfaces;
+using server.Core.Entities;
+using server.Core.Interfaces;
 
 namespace server.Data
 {

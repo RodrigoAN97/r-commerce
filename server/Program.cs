@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using server.Data;
-using server.Interfaces;
+using server.Core.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
