@@ -1,14 +1,19 @@
 using Microsoft.EntityFrameworkCore;
 using server.Core.Entities;
 
-public class DataContext : DbContext
+namespace server.Data
 {
-    protected readonly IConfiguration Configuration;
-
-    public DataContext(DbContextOptions options): base(options)
+    public class DataContext : DbContext
     {
+        protected readonly IConfiguration Configuration;
 
+        public DataContext(DbContextOptions options) : base(options)
+        {
+
+        }
+
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductType> ProductTypes { get; set; }
+        public DbSet<ProductBrand> ProductBrands { get; set; }
     }
-
-    public DbSet<Product> Products { get; set; }
 }
