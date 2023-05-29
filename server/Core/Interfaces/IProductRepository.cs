@@ -7,5 +7,7 @@ namespace server.Core.Interfaces
     {
         Task<Product?> GetProductByIdAsync(int id);
         Task<IReadOnlyList<Product>> GetProductsAsync();
+        Task<IReadOnlyList<ProductType>> GetProductTypesAsync();
+        Task<IReadOnlyList<ProductBrand>> GetProductBrandsAsync();
     }
 }

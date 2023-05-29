@@ -27,5 +27,15 @@ namespace server.Controllers
         {
             return await this.repository.GetProductByIdAsync(id);
         }
+
+        [HttpGet("brands")]
+        public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands() {
+            return Ok(await this.repository.GetProductBrandsAsync());
+        }
+
+        [HttpGet("types")]
+        public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes() {
+            return Ok(await this.repository.GetProductTypesAsync());
+        }
     }
 }
