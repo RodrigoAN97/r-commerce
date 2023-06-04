@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using server.Core.Entities;
 
 namespace server.Core.Interfaces
