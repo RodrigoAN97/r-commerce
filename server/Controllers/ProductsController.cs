@@ -5,9 +5,7 @@ using server.Core.Interfaces;
 
 namespace server.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class ProductsController : ControllerBase
+    public class ProductsController : BaseApiController
     {
         private readonly IProductRepository repository;
         public ProductsController(IProductRepository repository)
