@@ -23,16 +23,25 @@ namespace server.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Product?>> GetProduct(int id)
         {
-            return await this.repository.GetProductByIdAsync(id);
+            Product? product = await this.repository.GetProductByIdAsync(id);
+
+            if (product == null)
+            {
+                return NotFound("Product not found");
+            }
+
+            return Ok(product);
         }
 
         [HttpGet("brands")]
-        public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands() {
+        public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
+        {
             return Ok(await this.repository.GetProductBrandsAsync());
         }
 
         [HttpGet("types")]
-        public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes() {
+        public async Task<ActionResult<IReadOnlyList<ProductType>>> GetProductTypes()
+        {
             return Ok(await this.repository.GetProductTypesAsync());
         }
     }
