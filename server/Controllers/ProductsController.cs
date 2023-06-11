@@ -21,6 +21,8 @@ namespace server.Controllers
         }
 
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(String), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<Product?>> GetProduct(int id)
         {
             Product? product = await this.repository.GetProductByIdAsync(id);
