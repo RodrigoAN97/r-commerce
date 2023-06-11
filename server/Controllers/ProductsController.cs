@@ -14,9 +14,9 @@ namespace server.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProducts()
+        public async Task<ActionResult<List<Product>>> GetProducts(string sort = "")
         {
-            var products = await this.repository.GetProductsAsync();
+            var products = await this.repository.GetProductsAsync(sort);
             return Ok(products);
         }
 

@@ -25,12 +25,26 @@ namespace server.Data
             .SingleOrDefaultAsync(p => p.Id == id);
         }
 
-        public async Task<IReadOnlyList<Product>> GetProductsAsync()
+        public async Task<IReadOnlyList<Product>> GetProductsAsync(string sort)
         {
-            return await this.context.Products
+            var products = this.context.Products
             .Include(p => p.ProductBrand)
-            .Include(p => p.ProductType)
-            .ToListAsync();
+            .Include(p => p.ProductType);
+
+            switch (sort)
+            {
+                case "priceAsc":
+                    products.OrderBy(p => p.Price);
+                    break;
+                case "priceDesc":
+                    products.OrderByDescending(p => p.Price);
+                    break;
+                default:
+                    products.OrderBy(p => p.Name);
+                    break;
+            }
+
+            return await products.ToListAsync();
         }
 
         public async Task<IReadOnlyList<ProductType>> GetProductTypesAsync()
