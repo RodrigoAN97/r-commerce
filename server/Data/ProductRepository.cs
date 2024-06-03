@@ -25,6 +25,7 @@ namespace server.Data
             .SingleOrDefaultAsync(p => p.Id == id);
         }
 
+        // this sort does not work
         public async Task<IReadOnlyList<Product>> GetProductsAsync(string sort)
         {
             var products = this.context.Products
