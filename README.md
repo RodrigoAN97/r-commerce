@@ -13,6 +13,7 @@ To build and run your sample:
     ```
 
 3. Swagger testing:
-    ```
+
+    ```console
     https://localhost:7162/swagger
     ```
